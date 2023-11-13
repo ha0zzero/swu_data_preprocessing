@@ -2,7 +2,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
 import pandas as pd
-import re
 
 # 브라우저 꺼짐 방지 옵션
 # from selenium.webdriver.chrome.options import Options
@@ -45,6 +44,3 @@ df = df.set_index(keys='ID')
 df.to_csv('zigzag_info.csv', encoding='utf-8-sig')
 
 browser.close()
-
-# 해야할 것 :
-# 코드 정리
