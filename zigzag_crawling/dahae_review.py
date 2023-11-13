@@ -41,6 +41,9 @@ result = []
 # id = 1
 # global id
 
+html = browser.page_source
+soup = BeautifulSoup(html,'html.parser')
+
 zigzag_review_post_area = soup.select('.css-70rfrb.e1hi9732')
 browser.implicitly_wait(10)
 print(zigzag_review_post_area)  # 프린트가 빈 값으로 나옵니다...ㅠㅠ
