@@ -18,7 +18,7 @@ result=[]
 for id in range (1,31):
     zigzag_goods = '//*[@id="__next"]/main/section[2]/div/a['+str(id)+']'
     browser.find_element(By.XPATH, zigzag_goods).click()
-    time.sleep(1)
+    time.sleep(2)
 
     html = browser.page_source
     soup = BeautifulSoup(html, 'html.parser')
@@ -26,7 +26,7 @@ for id in range (1,31):
     review_area = soup.select('div.css-70rfrb.e1hi9732')
     browser.implicitly_wait(10) # 페이지 로드 기다리기
     for top_review in review_area:
-        print('ID: '+str(id)+' 리뷰 크롤링')
+        print('ID:'+str(id)+' 리뷰 크롤링')
         # print(top_review)
         ID = id
         리뷰어 = top_review.select_one('.BODY_16.SEMIBOLD.css-1k3hx0v.e1fnwskn0').text
@@ -44,5 +44,3 @@ df = df.set_index(keys='ID')
 df.to_csv('zigzag_review.csv', encoding='utf-8-sig')
 
 browser.close()
-
-# 해야할 것: 크롤링 안정화
