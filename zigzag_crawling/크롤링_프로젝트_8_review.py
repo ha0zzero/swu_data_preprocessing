@@ -41,6 +41,6 @@ for id in range (1,31):
 
 df = pd.DataFrame(result, columns=['ID','리뷰어', '리뷰날짜', '리뷰텍스트'])
 df = df.set_index(keys='ID')
-df.to_csv('zigzag_review4.csv', encoding='utf-8-sig')
+df.to_csv('zigzag_review5.csv', encoding='utf-8-sig')
 
 browser.close()
